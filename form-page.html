@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Fzorm</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/form.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 contents1">
+                <h2>How To Play!</h2>
+                <p>
+                    Player to go first will randomly be selected.<br>
+                    The player may continue rolling and accumulating points (but risk rolling a 1) or end his turn.<br>
+                    If the player rolls a 1 his turn is over, he loses all points he accumulated that turn, and automatically passes turn to the next player.<br>
+                    This play goes on until a winner is determined.<br>
+                    The first player to accumulate 100 or more points wins the game.<br>
+                </p>
+            </div>
+            <div class="col-md-12 contents2">
+                <h3>Gaming Details</h3>
+                <form id="new-contact">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="player1"></label>
+                            <input type="text" class="form-control" id="player1" placeholder="Player-1 Name..."
+                                required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="player2"></label>
+                            <input type="text" class="form-control" id="player2" placeholder="Player-2 Name..."
+                                required>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="targetScore"></label>
+                            <input type="number" class="form-control" id="targetScore" placeholder="Target Score..."
+                                required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

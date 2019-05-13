@@ -5,7 +5,7 @@ runningScores = [0, 0];
 
 //random player will start
 currentPlayer = Math.floor(Math.random() * 1) + 1;
-document.getElementById('player'+currentPlayer).classList.add('active');
+document.getElementById('player' + currentPlayer).classList.add('active');
 
 console.log(rolled);
 
@@ -36,25 +36,54 @@ document.getElementById("rollButton").addEventListener('click', function () {
 document.getElementById("holdButton").addEventListener('click', function () {
 
     //Add runningScore to cummulative score and update reading
-    cummulatedScores[currentPlayer]+=runningScores[currentPlayer];
+    cummulatedScores[currentPlayer] += runningScores[currentPlayer];
 
-    //update running score
+    //check if player has won
+    if (cummulatedScores >= targetScore){
+        
+    }
 
     //switch turn
     switchPlayer();
 });
 
-function switchPlayer(){
+function switchPlayer() {
     //update total on UI
     document.getElementById("total" + currentPlayer).innerHTML = 'Total Score: <span>' + cummulatedScores[currentPlayer] + '</span>';
     //reset running
-    runningScores[currentPlayer]=0;
+    runningScores[currentPlayer] = 0;
     //reset running on UI
     document.getElementById("running" + currentPlayer).innerHTML = 'Running Score: <span>' + 0 + '</span>';
     //toggle off old active player on UI
-    document.getElementById('player'+currentPlayer).classList.remove('active');
+    document.getElementById('player' + currentPlayer).classList.remove('active');
     //toggle active player
     currentPlayer ? currentPlayer = 0 : currentPlayer = 1;
     //toggle new active player on UI
-    document.getElementById('player'+currentPlayer).classList.add('active');
+    document.getElementById('player' + currentPlayer).classList.add('active');
 }
+
+function Contact(first, second, targetScore) {
+    this.first = first;
+    this.second = second;
+    this.targetScore = targetScore;
+
+}
+$(document).ready(function () {
+    $("form#new-contact").submit(function (event) {
+        event.preventDefault();
+        var player1 = $("input#player1").val();
+        var player2 = $("input#player2").val();
+        var targetScore = $("input#targetScore").val();
+
+
+        Contact.prototype.resultDifference = function () {
+            return cummulatedScores - this.targetScore ;
+        }
+        var sessionDetails = new Contact(player1, player2, targetScore);
+        $("p#player1").append("<span class='show-contact'>Player 1: " + sessionDetails.first + "</span>");
+        $("p#player2").append("<span class='show-contact'>Player 2: " + sessionDetails.second + "</span>");
+
+    });
+
+
+});
