@@ -29,10 +29,7 @@ document.getElementById("rollButton").addEventListener('click', function () {
     }
     //if rolled IS 1, switch player
     else {
-        document.getElementById("running" + currentPlayer).innerHTML = 'Running Score: <span>' + 0 + '</span>';
-        document.getElementById('player'+currentPlayer).classList.remove('active');
-        currentPlayer ? currentPlayer = 0 : currentPlayer = 1;
-        document.getElementById('player'+currentPlayer).classList.add('active');
+        switchPlayer();
     }
 });
 
@@ -40,14 +37,24 @@ document.getElementById("holdButton").addEventListener('click', function () {
 
     //Add runningScore to cummulative score and update reading
     cummulatedScores[currentPlayer]+=runningScores[currentPlayer];
-    document.getElementById("total" + currentPlayer).innerHTML = 'Cummulated Score: <span>' + cummulatedScores[currentPlayer] + '</span>';
 
     //update running score
-    runningScores[currentPlayer]=0;
-    document.getElementById("running" + currentPlayer).innerHTML = 'Running Score: <span>' + 0 + '</span>';
 
     //switch turn
-    document.getElementById('player'+currentPlayer).classList.remove('active');
-    currentPlayer ? currentPlayer = 0 : currentPlayer = 1;
-    document.getElementById('player'+currentPlayer).classList.add('active');
+    switchPlayer();
 });
+
+function switchPlayer(){
+    //update total on UI
+    document.getElementById("total" + currentPlayer).innerHTML = 'Total Score: <span>' + cummulatedScores[currentPlayer] + '</span>';
+    //reset running
+    runningScores[currentPlayer]=0;
+    //reset running on UI
+    document.getElementById("running" + currentPlayer).innerHTML = 'Running Score: <span>' + 0 + '</span>';
+    //toggle off old active player on UI
+    document.getElementById('player'+currentPlayer).classList.remove('active');
+    //toggle active player
+    currentPlayer ? currentPlayer = 0 : currentPlayer = 1;
+    //toggle new active player on UI
+    document.getElementById('player'+currentPlayer).classList.add('active');
+}

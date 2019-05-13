@@ -29,8 +29,9 @@
 
 #mode .page-content .contents1 img {
     padding: 0.3em;
-    height: 200px;
+    height: 150px;
     width: auto;
+    border-radius: 20px;
 }
 
 #mode .contents2 {
@@ -62,7 +63,7 @@
 
 .img-card {
     width: 100%;
-    height: 200px;
+    height: 180px;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
     display: block;
@@ -84,10 +85,28 @@
 
 .card-title {
     margin-top: 0px;
-    font-weight: 700;
-    font-size: 1.65em;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+h4::after {
+    content: '';
+    background: #ccc;
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin: 5px auto 5px;
+    text-align: left;
+}
+.card-content h5{
+    font-weight: 400;
+    color: #ccc;
+    font-size: 1em;
 }
 
+.card-content h5 span{
+    font-weight: 600;
+    color: #fff;
+}
 .card-action {
     border-top: 16px solid #D4D4D4;
 }
@@ -110,9 +129,9 @@
 }
 .button__text {
     display: block;
-    padding: 0.5em 2em;
-    font-weight: bold;
-    font-size: 1.5em;
+    padding: 1em 1em;
+    font-weight: 600;
+    font-size: 1.2em;
 }
 
 
@@ -120,8 +139,31 @@
     box-shadow: 0 8px 17px 0 rgba(255, 136, 0, 0.712),0 6px 20px 0 rgba(255, 196, 0, 0.404);
 }
 
+
+
+
 @media only screen and (max-width: 600px) {
-    #rolled-dice img{
-        width: 80%;
+    .card-title {
+        margin-top: 0px;
+        font-weight: 700;
+        font-size: 1.2em;
+    }
+    .card-content h5{
+        font-size: 0.9em;
+        font-weight: 400;
+    }
+    .img-card {
+        width: 100%;
+        height: 125px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        display: block;
+        overflow: hidden;
+    }
+    #mode .page-content .contents1 img {
+        padding: 0.3em;
+        height: 100px;
+        width: auto;
+        border-radius: 20px;
     }
 }
