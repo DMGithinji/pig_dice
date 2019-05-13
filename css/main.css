@@ -226,3 +226,25 @@ body {
         opacity: 1;
     }
 }
+@media only screen and (max-width: 600px) {
+    #hero .site-content img {
+        padding: 0.3em;
+        width: 180px;
+        height: auto;
+    }
+
+    #hero .site-content h1 {
+        font-size: 2em;
+        font-weight: 800;
+    }
+
+    #hero .site-content h4 {
+        font-size: 1em;
+        font-weight: 800;
+    }
+
+    .button__text {
+        padding: 0.25em 1em;
+        font-size: 1em;
+    }
+}
