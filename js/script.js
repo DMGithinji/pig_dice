@@ -22,4 +22,14 @@ document.getElementById("rollButton").addEventListener('click', function () {
     //display rolled dice
     document.getElementById("rolled-dice").innerHTML = '<img src="./Images/dice-' + rolled + '.png" alt="Dice"></img>';
 
+    //update running score if rolled NOT 1
+    if (rolled !== 1) {
+        runningScores[currentPlayer] += rolled;
+        document.getElementById("running" + currentPlayer).innerHTML = 'Running Score: <span>' + runningScores[currentPlayer] + '</span>';
+    }
+    //if rolled IS 1, switch player
+    else {
+        document.getElementById("running" + currentPlayer).innerHTML = 'Running Score: <span>' + 0 + '</span>';
+        currentPlayer ? currentPlayer = 0 : currentPlayer = 1;
+    }
 });
