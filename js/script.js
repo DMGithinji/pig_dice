@@ -61,7 +61,7 @@ function switchPlayer() {
     document.getElementById('player' + currentPlayer).classList.add('active');
 }
 
-function resetGame(){
+function resetGame() {
     cummulatedScores = [0, 0];
     runningScores = [0, 0];
     switchPlayer();

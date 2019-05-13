@@ -1,4 +1,4 @@
-body{
+body {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
         url(https://ak3.picdn.net/shutterstock/videos/3352403/thumb/2.jpg) no-repeat center center;
@@ -13,10 +13,12 @@ body{
     margin-top: 40px;
     text-align: center;
 }
+
 h2 {
     font-weight: 400;
     font-size: 1.8em;
 }
+
 h2::after {
     content: '';
     background: #ccc;
@@ -25,11 +27,13 @@ h2::after {
     width: 15%;
     margin: 5px auto 5px;
 }
-.contents1 p{
+
+.contents1 p {
     line-height: 35px;
     text-align: center;
     font-size: 18px;
 }
+
 .contents2 {
     text-align: center;
     margin: 0 auto;
@@ -42,10 +46,12 @@ h2::after {
     max-width: 600px;
     color: #fff;
 }
+
 h3 {
     font-weight: 400;
     font-size: 1.8em;
 }
+
 h3::after {
     content: '';
     background: #ccc;

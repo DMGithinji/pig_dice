@@ -10,7 +10,7 @@ The player who first scores 100 or more points wins the round.
 * When the player chooses to "hold", their turn total is added to their total score, and it becomes the next player's turn.
 * When a player rolls a 1, their running score reverts to 0 and it becomes the next player's turn. They do not accumulate points for the round.
 * The player who first scores 100 or more points wins.
-  
+
 ## Live Site
 Can be accessed [here](https://dmgithinji.github.io/pig_dice/)
 
