@@ -33,3 +33,13 @@ document.getElementById("rollButton").addEventListener('click', function () {
         currentPlayer ? currentPlayer = 0 : currentPlayer = 1;
     }
 });
+
+document.getElementById("holdButton").addEventListener('click', function () {
+
+    //Add runningScore to cummulative score and update reading
+    cummulatedScores[currentPlayer] = +runningScores[currentPlayer];
+    document.getElementById("total" + currentPlayer).innerHTML = 'Cummulated Score: <span>' + cummulatedScores[currentPlayer] + '</span>';
+
+    //switch turn
+    currentPlayer ? currentPlayer = 0 : currentPlayer = 1;
+});
