@@ -1,14 +1,10 @@
-var rolled, cummulatedScores, runningScores;
-
+var rolled, cummulatedScores, runningScores, targetScore;
 cummulatedScores = [0, 0];
 runningScores = [0, 0];
-
+targetScore = 20;
 //random player will start
-currentPlayer = Math.floor(Math.random() * 1) + 1;
+currentPlayer = Math.floor(Math.random() * 2);
 document.getElementById('player' + currentPlayer).classList.add('active');
-
-console.log(rolled);
-
 
 //Display the dice that's been rolled
 document.getElementById("rolled-dice").innerHTML = '<img src="./Images/Dices.png" alt="Dice"></img>';
@@ -37,12 +33,10 @@ document.getElementById("holdButton").addEventListener('click', function () {
 
     //Add runningScore to cummulative score and update reading
     cummulatedScores[currentPlayer] += runningScores[currentPlayer];
-
-    //check if player has won
-    if (cummulatedScores >= targetScore){
-        
+    if (cummulatedScores[currentPlayer] >= targetScore) {
+        document.getElementById("name-" + currentPlayer).innerHTML = 'WINNER!!!';
+        resetGame();
     }
-
     //switch turn
     switchPlayer();
 });
@@ -62,11 +56,16 @@ function switchPlayer() {
     document.getElementById('player' + currentPlayer).classList.add('active');
 }
 
+function resetGame(){
+    cummulatedScores = [0, 0];
+    runningScores = [0, 0];
+    switchPlayer();
+}
+
 function Contact(first, second, targetScore) {
     this.first = first;
     this.second = second;
     this.targetScore = targetScore;
-
 }
 $(document).ready(function () {
     $("form#new-contact").submit(function (event) {
@@ -77,7 +76,7 @@ $(document).ready(function () {
 
 
         Contact.prototype.resultDifference = function () {
-            return cummulatedScores - this.targetScore ;
+            return cummulatedScores - this.targetScore;
         }
         var sessionDetails = new Contact(player1, player2, targetScore);
         $("p#player1").append("<span class='show-contact'>Player 1: " + sessionDetails.first + "</span>");
