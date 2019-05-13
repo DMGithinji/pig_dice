@@ -1,7 +1,7 @@
 var rolled, cummulatedScores, runningScores, targetScore;
 cummulatedScores = [0, 0];
 runningScores = [0, 0];
-targetScore = 20;
+targetScore = 100;
 //random player will start
 currentPlayer = Math.floor(Math.random() * 2);
 document.getElementById('player' + currentPlayer).classList.add('active');
@@ -34,6 +34,8 @@ document.getElementById("holdButton").addEventListener('click', function () {
     //Add runningScore to cummulative score and update reading
     cummulatedScores[currentPlayer] += runningScores[currentPlayer];
     if (cummulatedScores[currentPlayer] >= targetScore) {
+        //Display the dice that's been rolled
+        document.getElementById("rolled-dice").innerHTML = '<img src="./Images/Dices.png" alt="Dice"></img>';
         //update total on UI
         document.getElementById("total" + currentPlayer).innerHTML = 'Total Score: <span>' + cummulatedScores[currentPlayer] + '</span>';
         var winner = parseInt(currentPlayer) + 1;
