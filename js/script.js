@@ -34,7 +34,10 @@ document.getElementById("holdButton").addEventListener('click', function () {
     //Add runningScore to cummulative score and update reading
     cummulatedScores[currentPlayer] += runningScores[currentPlayer];
     if (cummulatedScores[currentPlayer] >= targetScore) {
-        document.getElementById("name-" + currentPlayer).innerHTML = 'WINNER!!!';
+        //update total on UI
+        document.getElementById("total" + currentPlayer).innerHTML = 'Total Score: <span>' + cummulatedScores[currentPlayer] + '</span>';
+        var winner = parseInt(currentPlayer) + 1;
+        alert("Player " + winner + " is the winner with " + cummulatedScores[currentPlayer] + " points!!!")
         resetGame();
     }
     //switch turn
@@ -67,22 +70,3 @@ function Contact(first, second, targetScore) {
     this.second = second;
     this.targetScore = targetScore;
 }
-$(document).ready(function () {
-    $("form#new-contact").submit(function (event) {
-        event.preventDefault();
-        var player1 = $("input#player1").val();
-        var player2 = $("input#player2").val();
-        var targetScore = $("input#targetScore").val();
-
-
-        Contact.prototype.resultDifference = function () {
-            return cummulatedScores - this.targetScore;
-        }
-        var sessionDetails = new Contact(player1, player2, targetScore);
-        $("p#player1").append("<span class='show-contact'>Player 1: " + sessionDetails.first + "</span>");
-        $("p#player2").append("<span class='show-contact'>Player 2: " + sessionDetails.second + "</span>");
-
-    });
-
-
-});
